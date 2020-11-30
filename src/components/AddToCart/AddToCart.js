@@ -4,18 +4,17 @@ import {getNumberOfPizzas, addToCartAction, clearField} from '../../actions/acti
 
 
 const AddToCart = (props) => {
-    console.log(props.number);
 
     const getNumberOfItems = (e) => {
         e.preventDefault();
-        props.addToCartAction(props.title);
-        props.title.number = 0
+        props.addToCartAction(props.number);
+        props.title.number = 0;
         props.clearField(props.title)
     }
 
     const increase = (e) => {
         e.preventDefault()
-        props.title.number += 1
+        props.title.number += 1;
         props.getNumberOfPizzas(props.title)
     }
 
