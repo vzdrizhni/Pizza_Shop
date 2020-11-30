@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './Header/Header'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SignUp from '../components/SignUp/SignUp'
+import PizaaList from '../components/PizzaList/PizaaList'
 
 class App extends Component {
   render() {
@@ -12,7 +13,9 @@ class App extends Component {
           <Route exact path="/sign-up" component={SignUp} />
           <Header />
           <h1>Hello!</h1>
+          {/* <Route path="/" component={PizaaList} /> */}
         </Switch>
+        <PizaaList />
         </Router>
       </div>
     )
