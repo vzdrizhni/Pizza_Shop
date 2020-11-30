@@ -1,0 +1,35 @@
+.banner {
+    position: relative;    
+}
+
+.icon-link {
+    position: absolute;
+    right: 25px;
+    bottom: 35px;
+    border-radius: 50%;
+    background-color: hsl(0, 100%, 90%, 0.6);
+    opacity: 0,9;
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+}
+
+#icon {
+    height: 45px;
+    width: 45px;
+}
+
+.cart-wrapper {
+    position: relative;
+    top: 8px;
+    left: 7px;
+}
+
+.cart-wrapper span {
+    position: relative;
+    right: 3px;
+    font-size: 25px;
+    color: white;
+    background-color: rgba(247, 247, 247, 0.6);
+    border-radius: 50%;
+}
