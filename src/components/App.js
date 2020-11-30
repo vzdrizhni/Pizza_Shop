@@ -13,7 +13,6 @@ class App extends Component {
           <Route exact path="/sign-up" component={SignUp} />
           <Header />
           <h1>Hello!</h1>
-          {/* <Route path="/" component={PizaaList} /> */}
         </Switch>
         <PizaaList />
         </Router>
