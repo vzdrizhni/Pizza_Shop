@@ -1,20 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import {getPizzas} from '../../actions/actions'
+import PizzaListItem from '../PizzaListItem/PizzaListItem'
+import './pizza-list.css'
 
 export class PizaaList extends Component {
 
     render() {
         const {pizzas} = this.props;
+        console.log(pizzas);
         if(!pizzas) {
             return (
                 <div>Loading</div>
             )
         } else {
             return (
-                <div>
+                <div className="pizza-list">
                     {pizzas.map(pizza => {
-                        return <div>{pizza.title}</div>
+                        return <PizzaListItem key={pizza.id} pizza={pizza} />
                     })}
                 </div>
             )

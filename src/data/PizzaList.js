@@ -1,43 +1,60 @@
+import napoli from '../assets/pictures/neapolitan-pizza.jpg'
+import ny from '../assets/pictures/new-york-pizza.jpg'
+import deepdish from '../assets/pictures/deep-dish-pizza.jpg'
+import sic from '../assets/pictures/sicilian-pizza.jpg'
+import california from '../assets/pictures/californian-pizza.jpg'
+import detroit from '../assets/pictures/detroit-style-pizza.jpg'
+import louis from '../assets/pictures/st-louis-pizza.jpg'
+import greek from '../assets/pictures/greek-pizza.jpg'
+
 export const pizzasList = {
     pizzas: [{
             title: 'Neapolitan Pizza',
-            picture: 'src\assets\pictures\neapolitan-pizza.jpg',
-            price: 5
+            picture: napoli,
+            price: 5,
+            id: 1
         },
         {
             title: 'New York-Style Pizza',
-            picture: 'src\assets\pictures\new-york-pizza.jpg',
-            price: 5
+            picture: ny,
+            price: 5,
+            id: 2
         },
         {
             title: 'Chicago/Deep-Dish Pizza',
-            picture: 'src\assets\pictures\new-york-pizza.jpg',
-            price: 5
+            picture: deepdish,
+            price: 5,
+            id: 3
         },
         {
             title: 'Sicilian Pizza',
-            picture: 'src\assets\pictures\sicilian-pizza.jpg',
-            price: 5
+            picture: sic,
+            price: 5,
+            id: 4
         },
         {
             title: 'Californian Pizza',
-            picture: 'src\assets\pictures\californian-pizza.jpg',
-            price: 5
+            picture: california,
+            price: 5,
+            id: 5
         },
         {
             title: 'Detroit Pizza',
-            picture: 'src\assets\pictures\detroit-style-pizza.jpg',
-            price: 5
+            picture: detroit,
+            price: 5,
+            id: 6
         },
         {
             title: 'St. Louis Pizza',
-            picture: 'src\assets\pictures\st-louis-pizza.jpg',
-            price: 5
+            picture: louis,
+            price: 5,
+            id: 7
         },
         {
             title: 'Greek Pizza',
-            picture: 'src\assets\pictures\greek-pizza.jpg',
-            price: 5
+            picture: greek,
+            price: 5,
+            id: 8
         }
     ]
 }
