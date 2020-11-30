@@ -13,7 +13,9 @@ const Header = (props) => {
         <div>
             <header>
                 <div className='banner'>
-                    <img src={banner} alt='pizza-banner' />
+                    <Link path to='/'>
+                        <img src={banner} alt='pizza-banner' />
+                    </Link>
                     <div>
                         <Link to="/sign_in"><span className="log">LogIn</span></Link>
                         <Link to="/sign-up"><span className="sign-up">Sign Up</span></Link>

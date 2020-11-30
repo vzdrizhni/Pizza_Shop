@@ -5,6 +5,14 @@ import {getNumberOfPizzas, addToCartAction, clearField} from '../../actions/acti
 
 const AddToCart = (props) => {
 
+    let disabled = '';
+
+    if (props.title.number <= 0) {
+        disabled = 'disabled'
+    } else {
+        disabled = ''
+    }
+
     const getNumberOfItems = (e) => {
         e.preventDefault();
         props.addToCartAction(props.number);
@@ -19,6 +27,7 @@ const AddToCart = (props) => {
     }
 
     const decrease = (e) => {
+        console.log(disabled);
         e.preventDefault();
         props.title.number -= 1;
         props.getNumberOfPizzas(props.title)
@@ -29,8 +38,8 @@ const AddToCart = (props) => {
             <form onSubmit={getNumberOfItems}>
                 <span>{props.title.number}</span>
                 <button onClick={increase}>+</button>
-                <button onClick={decrease}>-</button>
-                <input type='submit' value='Add to cart...'></input>
+                <button onClick={decrease} disabled={disabled}>-</button>
+                <input type='submit' value='Add to cart...' disabled={disabled}></input>
             </form>
         </div>
     )

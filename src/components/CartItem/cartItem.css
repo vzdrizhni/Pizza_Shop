@@ -1,0 +1,14 @@
+.piza-item {
+    position: relative;
+}
+
+.piza-item img {
+    width: 75%;
+    height: 200px;
+}
+
+.piza-item h1 {
+    position: absolute;
+    top: 140px;
+    color: yellow;
+}
