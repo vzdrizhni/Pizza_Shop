@@ -1,45 +1,48 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import {getNumberOfPizzas} from '../../actions/actions'
+import {getNumberOfPizzas, addToCartAction, clearField} from '../../actions/actions'
 
 
 const AddToCart = (props) => {
-    let count = 0;
-
-    console.log(props);
+    console.log(props.number);
 
     const getNumberOfItems = (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        props.addToCartAction(props.title);
+        props.title.number = 0
+        props.clearField(props.title)
     }
-
-    const onChange = (e) => {
-        console.log(props.number);
-    };
-
 
     const increase = (e) => {
         e.preventDefault()
-        const cartItem = props.title;
-        cartItem.number += 1
+        props.title.number += 1
+        props.getNumberOfPizzas(props.title)
+    }
+
+    const decrease = (e) => {
+        e.preventDefault();
+        props.title.number -= 1;
         props.getNumberOfPizzas(props.title)
     }
 
     return (
         <div>
             <form onSubmit={getNumberOfItems}>
-                <span onChange={onChange}>{props.title.number}</span>
+                <span>{props.title.number}</span>
                 <button onClick={increase}>+</button>
-                <button>-</button>
-                <input type='submit' value='Submit'></input>
+                <button onClick={decrease}>-</button>
+                <input type='submit' value='Add to cart...'></input>
             </form>
         </div>
     )
 }
 
-const mapStateToProps = state => ({ number: state.number });
+const mapStateToProps = state => ({ number: state.number, clearField: state.clearField });
 
 const mapDispatchToProps = dispatch => ({
-  getNumberOfPizzas: value => dispatch(getNumberOfPizzas(value))
+  getNumberOfPizzas: value => dispatch(getNumberOfPizzas(value)),
+  addToCartAction: value => dispatch(addToCartAction(value)),
+  clearField: value => dispatch(clearField(value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddToCart);
