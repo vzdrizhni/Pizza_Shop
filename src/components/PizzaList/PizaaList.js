@@ -7,7 +7,6 @@ export class PizaaList extends Component {
 
     render() {
         const {pizzas} = this.props;
-        console.log(pizzas);
         if(!pizzas) {
             return (
                 <div>Loading</div>

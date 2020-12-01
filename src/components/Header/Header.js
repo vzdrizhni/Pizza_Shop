@@ -11,21 +11,23 @@ import {useAuth0} from '@auth0/auth0-react'
 
 const Header = (props) => {
     const {loginWithRedirect, user, logout} = useAuth0();
-    console.log(user);
     return (
         <div>
             <header>
                 <div className='banner'>
-                    <Link path to='/'>
+                    <Link to='/'>
                         <img src={banner} alt='pizza-banner' />
                     </Link>
                     <div>
                         <ul>
-                            <li onClick={() => loginWithRedirect()}><Link className='round green'>LogIn<span class="round">That is, if you already have an account.</span></Link></li>
-                            <li onClick={() => logout()}><Link className='round red'>Sign Up<span class="round">But only if you really, really want to. </span></Link></li>
+                            {user ? (
+                                <li onClick={() => logout()}><a href='#' className='round red'>LogOut<span className="round">But only if you really, really want to. </span></a></li>
+                             ) : (
+                                <li onClick={() => loginWithRedirect()}><a href='#' className='round green'>LogIn<span className="round">Create an account or Log in if you have an account.</span></a></li>
+                            )}
                         </ul>
                     </div>
-                    <Link path to='/cart' className='icon-link'>
+                    <Link to='/cart' className='icon-link'>
                         <div className='cart-wrapper'>
                             <FontAwesomeIcon icon={faShoppingCart} id='icon' />
                             <span>{props.cart.length}</span>

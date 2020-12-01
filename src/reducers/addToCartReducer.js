@@ -1,18 +1,31 @@
+import produce from "immer"
+
 const addToCartReducer = (state = [], action) => {
-    switch (action.type) {
-      case 'ADDTOCART':
-        // console.log(action.value);
-        if(state.some((pizza, index) => {
-          console.log(pizza);
-          return pizza.title === action.value.title ? state[index].number += action.value.number : undefined;
-        })){
-          console.log(state);
-        } else{
-          return [...state, action.value];
-        }
+
+  let index = state.findIndex(obj => {
+      return obj.title === action.value.title ? true : false
+    }
+  )
+
+  switch (action.type) {
+    case 'ADDTOCART':
+      // console.log(action.value);
+      if (state.some((pizza, index) => pizza.title === action.value.title)) {
+        return produce(state, draft => {draft[index].number += action.value.number});
+      } else {
+        return [...state, action.value];
+      }
+      case 'DECREASE':
+        return produce(state, draft => {
+          draft[index].number -= 1
+        })
+      case 'INCREASE':
+        return produce(state, draft => {
+          draft[index].number += 1
+        })
       default:
         return state;
-      }
+  }
 };
 
 export default addToCartReducer
