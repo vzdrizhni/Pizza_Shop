@@ -17,8 +17,10 @@ const Header = (props) => {
                         <img src={banner} alt='pizza-banner' />
                     </Link>
                     <div>
-                        <Link to="/sign_in"><span className="log">LogIn</span></Link>
-                        <Link to="/sign-up"><span className="sign-up">Sign Up</span></Link>
+                        <ul>
+                            <li><Link to="/sign_in" className='round green'>LogIn<span class="round">That is, if you already have an account.</span></Link></li>
+                            <li><Link to="/sign-up" className='round red'>Sign Up<span class="round">But only if you really, really want to. </span></Link></li>
+                        </ul>
                     </div>
                     <Link path to='/cart' className='icon-link'>
                         <div className='cart-wrapper'>
