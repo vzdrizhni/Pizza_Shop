@@ -2,7 +2,6 @@ import React from 'react'
 import './cartItem.css'
 
 const CartItem = ({cart}) => {
-    console.log(cart);
     return (
         <div className='piza-item'>
             <img src={cart.picture} />
