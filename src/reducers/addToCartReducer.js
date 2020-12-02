@@ -23,7 +23,6 @@ const addToCartReducer = (state = [], action) => {
           draft[index].number += 1
         })
       case 'REMOVE':
-        console.log(index);
         return produce(state, draft => {
           draft.splice(index, 1)
         })

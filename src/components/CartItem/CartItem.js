@@ -3,7 +3,7 @@ import './cartItem.css'
 import {changeNumber, increaseNumber, remove} from '../../actions/actions'
 import {connect} from 'react-redux'
 
-const CartItem = ({cart, changeNumber, increaseNumber, remove}) => {
+const CartItem = ({cart, changeNumber, increaseNumber, remove, cartTracker}) => {
     let disabled = '';
 
     if (cart.number <= 0) {
@@ -24,8 +24,8 @@ const CartItem = ({cart, changeNumber, increaseNumber, remove}) => {
 
     const removeItem = (e) => {
         e.preventDefault();
+        if(cartTracker.length === 1) {localStorage.clear()}
         remove(cart);
-        console.log('hui');
     }
 
     return (
@@ -53,7 +53,7 @@ const CartItem = ({cart, changeNumber, increaseNumber, remove}) => {
     )
 }
 
-// const mapStateToProps = state => ({ somethinElse: state.cart });
+const mapStateToProps = state => ({ cartTracker: state.cart});
 
 const mapDispatchToProps = dispatch => ({
     changeNumber: value => dispatch(changeNumber(value)),
@@ -61,4 +61,4 @@ const mapDispatchToProps = dispatch => ({
     remove: value => dispatch(remove(value)),
 });
 
-export default connect(null, mapDispatchToProps)(CartItem);
+export default connect(mapStateToProps, mapDispatchToProps)(CartItem);

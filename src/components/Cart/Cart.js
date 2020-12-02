@@ -2,8 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux';
 import CartItem from '../CartItem/CartItem'
 import './cart.scss'
+import {addToCartAction} from '../../actions/actions'
 
-const Cart = ({cart}) => {
+const Cart = ({cart, addToCartAction}) => {
     const total = cart.reduce((item, next) => {
         return item + next.price*next.number;
     }, 0)
@@ -11,20 +12,22 @@ const Cart = ({cart}) => {
     const tax = total*0.05;
     const finalPrice = total + shipping + tax;
 
-    let raw;
-    let storage = [];
-
-    // if (storage.length === cart.length) {
-    //   console.log(true);
-    //   raw = localStorage.getItem('cartStorage');
-    //   storage = JSON.parse(raw);
-    // } else {
-    //   localStorage.setItem('cartStorage', JSON.stringify(cart));
-    //   raw = localStorage.getItem('cartStorage');
-    //   storage = JSON.parse(raw);
-    //   console.log(false);
-    // }
-    // console.log(storage, cart);
+    if (localStorage.getItem('cartStorage') === null) {
+      localStorage.setItem('cartStorage', JSON.stringify(cart));
+    } else if (cart.length > JSON.parse(localStorage.getItem('cartStorage')).length) {
+      localStorage.setItem('cartStorage', JSON.stringify(cart))
+    } else if ((JSON.parse(localStorage.getItem('cartStorage')).length - cart.length) > 1){
+      JSON.parse(localStorage.getItem('cartStorage')).map(element => {
+        addToCartAction(element)
+      });
+    } else if ((JSON.parse(localStorage.getItem('cartStorage')).length - cart.length) === 1 && cart.length === 0) {
+      console.log(cart.length);
+      addToCartAction((JSON.parse(localStorage.getItem('cartStorage'))[0]));
+    } else if ((JSON.parse(localStorage.getItem('cartStorage')).length - cart.length) == 1 && cart.length !== 0) {
+      localStorage.setItem('cartStorage', JSON.stringify(cart));
+    } else if (cart.map(item => JSON.parse(localStorage.getItem('cartStorage')).some(element => item.number !== element.number))) {
+      localStorage.setItem('cartStorage', JSON.stringify(cart));
+    }
 
     const clear = () => {
       localStorage.clear()
@@ -40,7 +43,6 @@ const Cart = ({cart}) => {
                 <label className="product-removal">Remove</label>
                 <label className="product-line-price">Total</label>
             </div>
-            {/* {storage ? storage.map(item => <CartItem cart={item} key={item.id}/>) : <h1>Loading</h1>} */}
             {cart.map(item => {
                 return <CartItem cart={item} key={item.id}/>
             })}
@@ -67,6 +69,10 @@ const Cart = ({cart}) => {
     )
 }
 
+const mapDispatchToProps = dispatch => ({
+  addToCartAction: value => dispatch(addToCartAction(value)),
+});
+
 const mapStateToProps = state => ({ cart: state.cart });
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);
