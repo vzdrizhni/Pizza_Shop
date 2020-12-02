@@ -9,7 +9,6 @@ const addToCartReducer = (state = [], action) => {
 
   switch (action.type) {
     case 'ADDTOCART':
-      // console.log(action.value);
       if (state.some((pizza, index) => pizza.title === action.value.title)) {
         return produce(state, draft => {draft[index].number += action.value.number});
       } else {
@@ -22,6 +21,11 @@ const addToCartReducer = (state = [], action) => {
       case 'INCREASE':
         return produce(state, draft => {
           draft[index].number += 1
+        })
+      case 'REMOVE':
+        console.log(index);
+        return produce(state, draft => {
+          draft.splice(index, 1)
         })
       default:
         return state;

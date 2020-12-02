@@ -11,7 +11,24 @@ const Cart = ({cart}) => {
     const tax = total*0.05;
     const finalPrice = total + shipping + tax;
 
-    console.log(cart);
+    let raw;
+    let storage = [];
+
+    // if (storage.length === cart.length) {
+    //   console.log(true);
+    //   raw = localStorage.getItem('cartStorage');
+    //   storage = JSON.parse(raw);
+    // } else {
+    //   localStorage.setItem('cartStorage', JSON.stringify(cart));
+    //   raw = localStorage.getItem('cartStorage');
+    //   storage = JSON.parse(raw);
+    //   console.log(false);
+    // }
+    // console.log(storage, cart);
+
+    const clear = () => {
+      localStorage.clear()
+    }
 
     return (
         <div className='shopping-cart'>
@@ -23,6 +40,7 @@ const Cart = ({cart}) => {
                 <label className="product-removal">Remove</label>
                 <label className="product-line-price">Total</label>
             </div>
+            {/* {storage ? storage.map(item => <CartItem cart={item} key={item.id}/>) : <h1>Loading</h1>} */}
             {cart.map(item => {
                 return <CartItem cart={item} key={item.id}/>
             })}
@@ -44,7 +62,7 @@ const Cart = ({cart}) => {
                   <div className="totals-value" id="cart-total">{finalPrice}</div>
                 </div>
             </div>
-            <button className="checkout">Checkout</button>
+            <button className="checkout" onClick={clear}>Checkout</button>
         </div>
     )
 }

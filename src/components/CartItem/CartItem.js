@@ -1,9 +1,9 @@
 import React from 'react'
 import './cartItem.css'
-import {changeNumber, increaseNumber} from '../../actions/actions'
+import {changeNumber, increaseNumber, remove} from '../../actions/actions'
 import {connect} from 'react-redux'
 
-const CartItem = ({cart, changeNumber, increaseNumber}) => {
+const CartItem = ({cart, changeNumber, increaseNumber, remove}) => {
     let disabled = '';
 
     if (cart.number <= 0) {
@@ -15,14 +15,17 @@ const CartItem = ({cart, changeNumber, increaseNumber}) => {
     const increase = (e) => {
         e.preventDefault()
         increaseNumber(cart);
-        console.log(cart);
     }
 
     const decrease = (e) => {
         e.preventDefault();
         changeNumber(cart)
-        console.log(cart);
-        console.log(disabled);
+    }
+
+    const removeItem = (e) => {
+        e.preventDefault();
+        remove(cart);
+        console.log('hui');
     }
 
     return (
@@ -41,7 +44,7 @@ const CartItem = ({cart, changeNumber, increaseNumber}) => {
                     <button onClick={decrease} disabled={disabled}>-</button>
                 </div>
                 <div className="product-removal">
-                <button className="remove-product">
+                <button className="remove-product" onClick={removeItem}>
                     Remove
                 </button>
                 </div>
@@ -55,6 +58,7 @@ const CartItem = ({cart, changeNumber, increaseNumber}) => {
 const mapDispatchToProps = dispatch => ({
     changeNumber: value => dispatch(changeNumber(value)),
     increaseNumber: value => dispatch(increaseNumber(value)),
+    remove: value => dispatch(remove(value)),
 });
 
 export default connect(null, mapDispatchToProps)(CartItem);
