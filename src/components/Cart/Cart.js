@@ -10,6 +10,17 @@ import MyVerticallyCenteredModal from '../MyVerticallyCenteredModal/MyVertically
 const Cart = ({cart, addToCartAction}) => {
     const [modalShow, setModalShow] = useState(false);
 
+    let disabled = '';
+    let numberOfPizzas = cart.reduce((acc, item) => {
+      return acc + item.number
+    }, 0)
+
+    if (cart.length <= 0 || numberOfPizzas === 0) {
+        disabled = 'disabled'
+    } else {
+        disabled = ''
+    }
+
     const total = cart.reduce((item, next) => {
         return item + next.price*next.number;
     }, 0)
@@ -65,7 +76,7 @@ const Cart = ({cart, addToCartAction}) => {
                   <div className="totals-value" id="cart-total">{finalPrice}</div>
                 </div>
             </div>
-            <button className="checkout" onClick={() => setModalShow(true)}>Checkout</button>
+            <button className="checkout" onClick={() => setModalShow(true)} disabled={disabled}>Checkout</button>
             <OrderHistory />
             <MyVerticallyCenteredModal
               show={modalShow}

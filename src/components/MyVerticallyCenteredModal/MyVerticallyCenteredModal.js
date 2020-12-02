@@ -1,6 +1,8 @@
 import {Modal, Button, Form} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useAuth0} from '@auth0/auth0-react'
+import {clearState} from '../../actions/actions'
+import {connect} from 'react-redux'
 
 function MyVerticallyCenteredModal(props) {
     const {user} = useAuth0();
@@ -30,6 +32,8 @@ function MyVerticallyCenteredModal(props) {
         raw.push(person)
         localStorage.setItem('orders', JSON.stringify(raw));
         console.log('works');
+        props.clearState();
+        localStorage.removeItem('cartStorage');
       }
     }
 
@@ -62,4 +66,10 @@ function MyVerticallyCenteredModal(props) {
     );
 }
 
-export default MyVerticallyCenteredModal;
+const mapDispatchToProps = dispatch => ({
+  clearState: value => dispatch(clearState(value)),
+});
+
+const mapStateToProps = state => ({ cart: state.cart });
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyVerticallyCenteredModal);

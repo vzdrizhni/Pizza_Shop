@@ -2,10 +2,13 @@ import produce from "immer"
 
 const addToCartReducer = (state = [], action) => {
 
-  let index = state.findIndex(obj => {
-      return obj.title === action.value.title ? true : false
-    }
-  )
+  let index;
+  if(action.value) {
+      index = state.findIndex(obj => {
+        return obj.title === action.value.title ? true : false
+      }
+    )
+  }
 
   switch (action.type) {
     case 'ADDTOCART':
@@ -26,6 +29,8 @@ const addToCartReducer = (state = [], action) => {
         return produce(state, draft => {
           draft.splice(index, 1)
         })
+      case 'CLEARSTATE':
+        return []
       default:
         return state;
   }
