@@ -1,7 +1,38 @@
-import {Modal, Button} from 'react-bootstrap'
+import {Modal, Button, Form} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {useAuth0} from '@auth0/auth0-react'
 
 function MyVerticallyCenteredModal(props) {
+    const {user} = useAuth0();
+
+    let inputValue = '';
+
+    if (localStorage.getItem('orders') === null) {
+      localStorage.setItem('orders', JSON.stringify([]));
+    }
+
+    const onChange = (e) => {
+      inputValue = e.target.value
+      console.log(inputValue);
+    }
+
+    const orderHandler = (e) => {
+      e.preventDefault();
+      if (user) {
+        let person = {
+          user: user.name,
+          orders: '',
+          adress: ''
+        };
+        person.orders = (JSON.parse(localStorage.getItem('cartStorage')))
+        person.adress = inputValue
+        let raw = JSON.parse(localStorage.getItem('orders'))
+        raw.push(person)
+        localStorage.setItem('orders', JSON.stringify(raw));
+        console.log('works');
+      }
+    }
+
     return (
       <Modal
         {...props}
@@ -11,16 +42,18 @@ function MyVerticallyCenteredModal(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
+        <Form onSubmit={orderHandler}>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Enter the adress..</Form.Label>
+              <Form.Control type="text" placeholder="Please Enter The Adress.." onChange={onChange} />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+        </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>

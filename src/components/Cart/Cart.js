@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import CartItem from '../CartItem/CartItem'
 import './cart.scss'
 import {addToCartAction} from '../../actions/actions'
-import {useAuth0} from '@auth0/auth0-react'
+import OrderHistory from '../OrederHistory/OrderHistory'
+
 import MyVerticallyCenteredModal from '../MyVerticallyCenteredModal/MyVerticallyCenteredModal'
 
 const Cart = ({cart, addToCartAction}) => {
     const [modalShow, setModalShow] = useState(false);
 
-    const {user} = useAuth0();
     const total = cart.reduce((item, next) => {
         return item + next.price*next.number;
     }, 0)
@@ -32,19 +32,6 @@ const Cart = ({cart, addToCartAction}) => {
       localStorage.setItem('cartStorage', JSON.stringify(cart));
     } else if (cart.map(item => JSON.parse(localStorage.getItem('cartStorage')).some(element => item.number !== element.number))) {
       localStorage.setItem('cartStorage', JSON.stringify(cart));
-    }
-
-    if (user) {
-      let person = {
-        user: user.name,
-        orders: []
-      };
-      JSON.parse(localStorage.getItem('cartStorage')).map(item => person.orders.push(item))
-      localStorage.setItem('user', JSON.stringify(person));
-    }
-
-    const clear = () => {
-      localStorage.clear()
     }
 
     return (
@@ -79,6 +66,7 @@ const Cart = ({cart, addToCartAction}) => {
                 </div>
             </div>
             <button className="checkout" onClick={() => setModalShow(true)}>Checkout</button>
+            <OrderHistory />
             <MyVerticallyCenteredModal
               show={modalShow}
               onHide={() => setModalShow(false)} />
