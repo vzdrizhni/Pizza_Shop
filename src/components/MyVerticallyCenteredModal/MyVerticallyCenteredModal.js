@@ -8,17 +8,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function MyVerticallyCenteredModal(props) {
   const {user} = useAuth0();
   const [errors, setErrors] = useState({name: ''});
+  const [inputValue, setInputValue] = useState('');
 
-  let inputValue = '';
+  // let inputValue = '';
   // let errors = {};
   console.log(errors);
+  console.log(inputValue);
 
   if (localStorage.getItem('orders') === null) {
     localStorage.setItem('orders', JSON.stringify([]));
   }
 
   const onChange = (e) => {
-    inputValue = e.target.value
+    setInputValue(e.target.value)
     console.log(inputValue);
   }
 
@@ -31,7 +33,6 @@ function MyVerticallyCenteredModal(props) {
     }
 
     if (!input.match(/^[A-Za-z0-9 _]*[A-Za-z]+[A-Za-z0-9 _]*$/) && input !== '') {
-        console.log('gotcha', input);
         formIsValid = false;
         setErrors({name: "Should contain both letters and numbers"});
     }
@@ -55,6 +56,8 @@ function MyVerticallyCenteredModal(props) {
         console.log('works');
         props.clearState();
         localStorage.removeItem('cartStorage');
+        setInputValue('');
+        setErrors({name: "Order Successfully Accepted!"})
       } else {
         console.log(errors.name);
       }
@@ -80,7 +83,8 @@ function MyVerticallyCenteredModal(props) {
               type="text"
               placeholder="Please Enter The Adress.."
               name='adress'
-              onChange={onChange}/>
+              onChange={onChange}
+              value={inputValue} />
           </Form.Group>
           <Button variant="primary" type="submit">
             Submit
