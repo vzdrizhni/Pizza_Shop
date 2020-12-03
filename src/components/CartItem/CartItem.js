@@ -2,6 +2,7 @@ import React from 'react'
 import './cartItem.css'
 import {changeNumber, increaseNumber, remove} from '../../actions/actions'
 import {connect} from 'react-redux'
+import Button from 'react-bootstrap/Button'
 
 const CartItem = ({cart, changeNumber, increaseNumber, remove, cartTracker}) => {
     let disabled = '';
@@ -24,7 +25,7 @@ const CartItem = ({cart, changeNumber, increaseNumber, remove, cartTracker}) => 
 
     const removeItem = (e) => {
         e.preventDefault();
-        if(cartTracker.length === 1) {localStorage.clear()}
+        if(cartTracker.length === 1) {localStorage.removeItem('cartStorage')}
         remove(cart);
     }
 
@@ -39,9 +40,9 @@ const CartItem = ({cart, changeNumber, increaseNumber, remove, cartTracker}) => 
                 </div>
                 <div className="product-price">{cart.price}</div>
                 <div className="product-quantity">
+                    <Button variant="dark" onClick={increase} size="sm">+</Button >
                     <span>{cart.number}</span>
-                    <button onClick={increase}>+</button>
-                    <button onClick={decrease} disabled={disabled}>-</button>
+                    <Button variant="dark" onClick={decrease} disabled={disabled} size="sm">-</Button >
                 </div>
                 <div className="product-removal">
                 <button className="remove-product" onClick={removeItem}>

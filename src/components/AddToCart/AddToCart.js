@@ -44,7 +44,7 @@ const AddToCart = (props) => {
                     <span>{props.title.number}</span>
                     <Button variant="dark" onClick={decrease} disabled={disabled} size="sm">-</Button >
                 </div>
-                <Button variant="dark" type='submit' value='Add to cart...' disabled={disabled} size="sm">Add to cart...</Button>
+                <Button variant="dark" type='submit' className='add-to' disabled={disabled} size="sm">Add to cart...</Button>
             </form>
         </div>
     )

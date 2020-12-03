@@ -32,9 +32,9 @@ function MyVerticallyCenteredModal(props) {
       setErrors({name: "Cannot be empty"});
     }
 
-    if (!input.match(/^[A-Za-z0-9 _]*[A-Za-z]+[A-Za-z0-9 _]*$/) && input !== '') {
+    if (!input.match(/\w+(\s\w+){2,}/) && input !== '') {
         formIsValid = false;
-        setErrors({name: "Should contain both letters and numbers"});
+        setErrors({name: "Please Enter Valid Adress..."});
     }
     return formIsValid;
   }
@@ -79,6 +79,7 @@ function MyVerticallyCenteredModal(props) {
         <Form onSubmit={orderHandler}>
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Enter the adress..</Form.Label>
+            <Form.Label>e.g. 61 Park Street</Form.Label>
             <Form.Control
               type="text"
               placeholder="Please Enter The Adress.."

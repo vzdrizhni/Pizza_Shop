@@ -4,10 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useAuth0} from '@auth0/auth0-react'
 
 const OrderHistory = () => {
-  const orders = JSON.parse(localStorage.getItem('orders'))
-  console.log(orders);
+  // const orders = JSON.parse(localStorage.getItem('orders'))
   const {user} = useAuth0();
-  if (user) {
+  const orders = JSON.parse(localStorage.getItem('orders')).filter(item => item.user === user.name)
+  console.log(orders, user);
+  if (user && orders) {
     return (
       <Table striped bordered hover className="mt-3">
         <thead>

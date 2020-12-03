@@ -1,21 +1,25 @@
 .piza-card {
     position: relative;
     border: 3px solid orange;
+    border-radius: 2%;
 }
 
 .piza-card h1 {
     position: absolute;
     left: 15px;
     top: 15px;
+    font-family: 'Alfa Slab One', cursive;
+    color: rgb(34, 29, 29);
 }
 
 .piza-card h4 {
     position: absolute;
     right: 25px;
-    bottom: 25px;
+    bottom: 11%;
 }
 
 .piza-card img {
     width: 100%;
     height: 300px;
+    border-radius: 2%;
 }
