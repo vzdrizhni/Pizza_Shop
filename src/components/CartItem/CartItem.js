@@ -38,7 +38,7 @@ const CartItem = ({cart, changeNumber, increaseNumber, remove, cartTracker}) => 
                     <div className="product-title">{cart.title}</div>
                     <p className="product-description"></p>
                 </div>
-                <div className="product-price">{cart.price}</div>
+                <div className="product-price">{cart.price}{cart.currency}</div>
                 <div className="product-quantity">
                     <Button variant="dark" onClick={increase} size="sm">+</Button >
                     <span>{cart.number}</span>
@@ -49,7 +49,7 @@ const CartItem = ({cart, changeNumber, increaseNumber, remove, cartTracker}) => 
                     Remove
                 </button>
                 </div>
-                <div className="product-line-price">{cart.number * cart.price}</div>
+                <div className="product-line-price">{cart.number * cart.price}{cart.currency}</div>
         </div>
     )
 }

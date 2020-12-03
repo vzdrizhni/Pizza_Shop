@@ -12,49 +12,57 @@ export const pizzasList = {
             title: 'Neapolitan Pizza',
             picture: napoli,
             price: 5,
-            id: 1
+            id: 1,
+            currency: '\u0024'
         },
         {
             title: 'New York-Style Pizza',
             picture: ny,
             price: 5,
-            id: 2
+            id: 2,
+            currency: '\u0024'
         },
         {
             title: 'Chicago/Deep-Dish Pizza',
             picture: deepdish,
             price: 5,
-            id: 3
+            id: 3,
+            currency: '\u0024'
         },
         {
             title: 'Sicilian Pizza',
             picture: sic,
             price: 5,
-            id: 4
+            id: 4,
+            currency: '\u0024'
         },
         {
             title: 'Californian Pizza',
             picture: california,
             price: 5,
-            id: 5
+            id: 5,
+            currency: '\u0024'
         },
         {
             title: 'Detroit Pizza',
             picture: detroit,
             price: 5,
-            id: 6
+            id: 6,
+            currency: '\u0024'
         },
         {
             title: 'St. Louis Pizza',
             picture: louis,
             price: 5,
-            id: 7
+            id: 7,
+            currency: '\u0024'
         },
         {
             title: 'Greek Pizza',
             picture: greek,
             price: 5,
-            id: 8
+            id: 8,
+            currency: '\u0024'
         }
     ]
 }

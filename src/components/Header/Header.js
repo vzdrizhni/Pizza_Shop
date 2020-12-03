@@ -8,6 +8,7 @@ import {
 import { connect } from 'react-redux';
 import './header.css'
 import {useAuth0} from '@auth0/auth0-react'
+import CurrencyOption from '../CurrencyOption/CurrencyOption'
 
 const Header = (props) => {
     const {loginWithRedirect, user, logout} = useAuth0();
@@ -34,6 +35,7 @@ const Header = (props) => {
                         </div>
                     </Link>
                 </div>
+                <CurrencyOption />
             </header>
         </div>
     )

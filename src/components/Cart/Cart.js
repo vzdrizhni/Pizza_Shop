@@ -4,12 +4,15 @@ import CartItem from '../CartItem/CartItem'
 import './cart.scss'
 import {addToCartAction} from '../../actions/actions'
 import OrderHistory from '../OrederHistory/OrderHistory'
+import {changeCurrency, priceCarrier} from '../../actions/actions'
 
 import MyVerticallyCenteredModal from '../MyVerticallyCenteredModal/MyVerticallyCenteredModal'
 
-const Cart = ({cart, addToCartAction}) => {
+const Cart = ({cart, addToCartAction, changeCurrency, priceCarrier}) => {
     const [modalShow, setModalShow] = useState(false);
 
+    let currency = '\u0024'
+    cart.length > 0 ? currency = cart[0].currency : currency = '\u0024';
     let disabled = '';
     let numberOfPizzas = cart.reduce((acc, item) => {
       return acc + item.number
@@ -27,6 +30,11 @@ const Cart = ({cart, addToCartAction}) => {
     const shipping = 15;
     const tax = total*0.05;
     const finalPrice = total + shipping + tax;
+
+    const carryThePrice = () => {
+      priceCarrier(finalPrice);
+      console.log('finalPrice' + finalPrice);
+    }
 
     if (localStorage.getItem('cartStorage') === null) {
       localStorage.setItem('cartStorage', JSON.stringify(cart));
@@ -61,22 +69,22 @@ const Cart = ({cart, addToCartAction}) => {
             <div className="totals">
                 <div className="totals-item">
                   <label>Subtotal</label>
-                <div className="totals-value" id="cart-subtotal">{total}</div>
+                  <div className="totals-value" id="cart-subtotal">{total}{currency}</div>
                 </div>
                 <div className="totals-item">
                   <label>Tax (5%)</label>
-                <div className="totals-value" id="cart-tax">{tax}</div>
+                <div className="totals-value" id="cart-tax">{tax}{currency}</div>
                 </div>
                 <div className="totals-item">
                   <label>Shipping</label>
-                <div className="totals-value" id="cart-shipping">{shipping}</div>
+                <div className="totals-value" id="cart-shipping">{shipping}{currency}</div>
                 </div>
                 <div className="totals-item totals-item-total">
                   <label>Grand Total</label>
-                  <div className="totals-value" id="cart-total">{finalPrice}</div>
+                  <div className="totals-value" id="cart-total">{finalPrice}{currency}</div>
                 </div>
             </div>
-            <button className="checkout" onClick={() => setModalShow(true)} disabled={disabled}>Checkout</button>
+            <button className="checkout" onClick={() => { setModalShow(true); carryThePrice()}} disabled={disabled}>Checkout</button>
             <OrderHistory />
             <MyVerticallyCenteredModal
               show={modalShow}
@@ -87,6 +95,8 @@ const Cart = ({cart, addToCartAction}) => {
 
 const mapDispatchToProps = dispatch => ({
   addToCartAction: value => dispatch(addToCartAction(value)),
+  changeCurrency: value => dispatch(changeCurrency(value)),
+  priceCarrier: value => dispatch(priceCarrier(value)),
 });
 
 const mapStateToProps = state => ({ cart: state.cart });

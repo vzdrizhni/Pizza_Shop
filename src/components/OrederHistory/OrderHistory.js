@@ -33,7 +33,7 @@ const OrderHistory = () => {
                   {item
                     .orders
                     .map((item, index) => {
-                      return <div>
+                      return <div key={index}>
                         <span>{item.title}
                           :
                         </span>
@@ -42,7 +42,7 @@ const OrderHistory = () => {
                     })}
                 </ td>
                 <td>{item.adress}</td>
-                <td>{item.total}</td>
+                <td>{item.total}{item.orders[0].currency}</td>
               </tr>
             })}
           </tbody>

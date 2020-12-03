@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {Modal, Button, Form} from 'react-bootstrap'
 import {useAuth0} from '@auth0/auth0-react'
-import {clearState} from '../../actions/actions'
+import {clearthestate} from '../../actions/actions'
 import {connect} from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,6 +11,8 @@ function MyVerticallyCenteredModal(props) {
   const [inputValue, setInputValue] = useState('');
   const [nameValue, setNameValue] = useState('');
   const [lastNameValue, setLastNameValue] = useState('');
+
+  const {clearthestate, ...rest} = props;
 
   if (localStorage.getItem('orders') === null) {
     localStorage.setItem('orders', JSON.stringify([]));
@@ -79,12 +81,12 @@ function MyVerticallyCenteredModal(props) {
         };
         person.orders = (JSON.parse(localStorage.getItem('cartStorage')))
         person.adress = inputValue
-        person.total = (JSON.parse(localStorage.getItem('cartStorage'))).reduce((acc, item) => {return acc + (item.price*item.number)}, 0)
+        person.total = props.price
         let raw = JSON.parse(localStorage.getItem('orders'))
         raw.push(person)
         localStorage.setItem('orders', JSON.stringify(raw));
         console.log('works');
-        props.clearState();
+        clearthestate();
         localStorage.removeItem('cartStorage');
         setInputValue('');
         setNameValue('');
@@ -152,9 +154,9 @@ function MyVerticallyCenteredModal(props) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  clearState: value => dispatch(clearState(value))
+  clearthestate: value => dispatch(clearthestate(value))
 });
 
-const mapStateToProps = state => ({cart: state.cart});
+const mapStateToProps = state => ({cart: state.cart, price: state.price});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyVerticallyCenteredModal);
