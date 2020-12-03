@@ -26,12 +26,18 @@
 }
 
 .cart-wrapper span {
-    position: relative;
-    right: 3px;
+    position: absolute;
+	right: 3px;
+	bottom: -8px;
     font-size: 25px;
     color: white;
     background-color: rgba(247, 247, 247, 0.6);
-    border-radius: 50%;
+	border-radius: 50%;
+	height: 25px;
+	width: 25px;
+	display: flex;
+	justify-content: center;
+    align-items: center;
 }
 
 * {

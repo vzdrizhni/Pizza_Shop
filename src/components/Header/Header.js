@@ -30,7 +30,7 @@ const Header = (props) => {
                     <Link to='/cart' className='icon-link'>
                         <div className='cart-wrapper'>
                             <FontAwesomeIcon icon={faShoppingCart} id='icon' />
-                            <span>{props.cart.length}</span>
+                            <span style={{backgroundColor: props.cart.length > 0 ? '#c71105' : '#bbb' }}>{props.cart.length}</span>
                         </div>
                     </Link>
                 </div>

@@ -7,13 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function MyVerticallyCenteredModal(props) {
   const {user} = useAuth0();
-  const [errors, setErrors] = useState({name: ''});
+  const [errors, setErrors] = useState({name: '', userName: '', lastName: ''});
   const [inputValue, setInputValue] = useState('');
-
-  // let inputValue = '';
-  // let errors = {};
-  console.log(errors);
-  console.log(inputValue);
+  const [nameValue, setNameValue] = useState('');
+  const [lastNameValue, setLastNameValue] = useState('');
 
   if (localStorage.getItem('orders') === null) {
     localStorage.setItem('orders', JSON.stringify([]));
@@ -21,7 +18,38 @@ function MyVerticallyCenteredModal(props) {
 
   const onChange = (e) => {
     setInputValue(e.target.value)
-    console.log(inputValue);
+  }
+
+  const forTheName = (e) => {
+    setNameValue(e.target.value)
+  }
+
+  const forTheLastName = (e) => {
+    setLastNameValue(e.target.value)
+  }
+
+  const handleNamesValidation = (input) => {
+    let formIsValid = true;
+
+    if (input === '') {
+      formIsValid = false;
+      setErrors({userName: "Name cannot be empty"});
+    }
+
+    return formIsValid;
+  }
+
+  const handleLastNamesValidation = (input) => {
+    let formIsValid = true;
+
+    if (input === '') {
+      formIsValid = false;
+      setErrors({lastName: "Lastname cannot be empty"});
+    }
+
+    console.log(errors.lastName);
+
+    return formIsValid;
   }
 
   const handleValidation = (input) => {
@@ -42,14 +70,16 @@ function MyVerticallyCenteredModal(props) {
   const orderHandler = (e) => {
     e.preventDefault();
     if (user) {
-      if (handleValidation(inputValue)) {
+      if (handleValidation(inputValue) && handleNamesValidation(nameValue) && handleLastNamesValidation(lastNameValue)) {
         let person = {
           user: user.name,
           orders: '',
-          adress: ''
+          adress: '',
+          total: ''
         };
         person.orders = (JSON.parse(localStorage.getItem('cartStorage')))
         person.adress = inputValue
+        person.total = (JSON.parse(localStorage.getItem('cartStorage'))).reduce((acc, item) => {return acc + (item.price*item.number)}, 0)
         let raw = JSON.parse(localStorage.getItem('orders'))
         raw.push(person)
         localStorage.setItem('orders', JSON.stringify(raw));
@@ -57,6 +87,8 @@ function MyVerticallyCenteredModal(props) {
         props.clearState();
         localStorage.removeItem('cartStorage');
         setInputValue('');
+        setNameValue('');
+        setLastNameValue('');
         setErrors({name: "Order Successfully Accepted!"})
       } else {
         console.log(errors.name);
@@ -86,6 +118,26 @@ function MyVerticallyCenteredModal(props) {
               name='adress'
               onChange={onChange}
               value={inputValue} />
+            <Modal.Title id="contained-modal-title-vcenter">
+              <h4 style={{display: errors.userName ? 'block' : 'none' }} className='danger'>{errors.userName}</h4>
+            </Modal.Title>
+            <Form.Label>Enter your Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Please Enter The Name.."
+              name='adress'
+              onChange={forTheName}
+              value={nameValue} />
+            <Modal.Title id="contained-modal-title-vcenter">
+              <h4 style={{display: errors.lastName? 'block' : 'none' }} className='danger'>{errors.lastName}</h4>
+            </Modal.Title>
+            <Form.Label>Enter your Lastname</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Please Enter The Lastname.."
+              name='adress'
+              onChange={forTheLastName}
+              value={lastNameValue} />
           </Form.Group>
           <Button variant="primary" type="submit">
             Submit

@@ -4,39 +4,55 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useAuth0} from '@auth0/auth0-react'
 
 const OrderHistory = () => {
-  // const orders = JSON.parse(localStorage.getItem('orders'))
   const {user} = useAuth0();
-  const orders = JSON.parse(localStorage.getItem('orders')).filter(item => item.user === user.name)
-  console.log(orders, user);
-  if (user && orders) {
+  if (user) {
+    const orders = JSON
+      .parse(localStorage.getItem('orders'))
+      .filter(item => {
+        return item.user === user.name
+      }, []);
     return (
-      <Table striped bordered hover className="mt-3">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Email</th>
-            <th>Order</th>
-            <th>Adress</th>
-          </tr>
-        </thead>
-        <tbody>
-        {orders.map((item, index) => {
-            return  <tr key={index}>
-                        <td>{index}</td>
-                        <td>{item.user}</td>
-                        {item.orders.map(item => {
-                            return <tr><td>{item.title}</td><td>{item.number}</td></tr>
-                        })}
-                        <td>{item.adress}</td>
-                    </tr>
-        })}
-        </tbody>
-      </Table>
+      <div>
+        <h1>Order History :</h1>
+        <Table striped bordered hover className="mt-3">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Email</th>
+              <th>Order</th>
+              <th>Adress</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {orders.map((item, index) => {
+              return <tr key={index}>
+                <td>{index}</td>
+                <td>{item.user}</td>
+                <td key={index}>
+                  {item
+                    .orders
+                    .map((item, index) => {
+                      return <div>
+                        <span>{item.title}
+                          :
+                        </span>
+                        <span>{item.number}</span>
+                      </div>
+                    })}
+                </ td>
+                <td>{item.adress}</td>
+                <td>{item.total}</td>
+              </tr>
+            })}
+          </tbody>
+        </Table>
+      </div>
     )
   } else {
-      return (
-          <h1>Sign In to see the history of orders</h1>
-      )
+    return (
+      <h1>Sign In to see the history of orders</h1>
+    )
   }
 
 }
