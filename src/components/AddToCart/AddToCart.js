@@ -1,10 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import {getNumberOfPizzas, addToCartAction, clearField} from '../../actions/actions'
+import {increaseNumberOfPizzas, decreaseNumberOfPizzas, addToCartAction, clearField} from '../../actions/actions'
 import Button from 'react-bootstrap/Button'
 import './addToCart.css'
-
-
 
 const AddToCart = (props) => {
 
@@ -18,22 +16,19 @@ const AddToCart = (props) => {
 
     const getNumberOfItems = (e) => {
         e.preventDefault();
-        props.addToCartAction(props.number);
-        props.title.number = 0;
+        props.addToCartAction(props.title);
         props.clearField(props.title)
     }
 
     const increase = (e) => {
         e.preventDefault()
-        props.title.number += 1;
-        props.getNumberOfPizzas(props.title)
+        props.increaseNumberOfPizzas(props.title)
     }
 
     const decrease = (e) => {
         console.log(disabled);
         e.preventDefault();
-        props.title.number -= 1;
-        props.getNumberOfPizzas(props.title)
+        props.decreaseNumberOfPizzas(props.title)
     }
 
     return (
@@ -50,12 +45,11 @@ const AddToCart = (props) => {
     )
 }
 
-const mapStateToProps = state => ({ number: state.number, clearField: state.clearField });
-
 const mapDispatchToProps = dispatch => ({
-  getNumberOfPizzas: value => dispatch(getNumberOfPizzas(value)),
+  increaseNumberOfPizzas: value => dispatch(increaseNumberOfPizzas(value)),
+  decreaseNumberOfPizzas: value => dispatch(decreaseNumberOfPizzas(value)),
   addToCartAction: value => dispatch(addToCartAction(value)),
   clearField: value => dispatch(clearField(value))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddToCart);
+export default connect(null, mapDispatchToProps)(AddToCart);

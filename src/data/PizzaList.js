@@ -13,6 +13,7 @@ export const pizzasList = {
             picture: napoli,
             price: 5,
             id: 1,
+            number: 0,
             currency: '\u0024'
         },
         {
@@ -20,6 +21,7 @@ export const pizzasList = {
             picture: ny,
             price: 5,
             id: 2,
+            number: 0,
             currency: '\u0024'
         },
         {
@@ -27,6 +29,7 @@ export const pizzasList = {
             picture: deepdish,
             price: 5,
             id: 3,
+            number: 0,
             currency: '\u0024'
         },
         {
@@ -34,6 +37,7 @@ export const pizzasList = {
             picture: sic,
             price: 5,
             id: 4,
+            number: 0,
             currency: '\u0024'
         },
         {
@@ -41,6 +45,7 @@ export const pizzasList = {
             picture: california,
             price: 5,
             id: 5,
+            number: 0,
             currency: '\u0024'
         },
         {
@@ -48,6 +53,7 @@ export const pizzasList = {
             picture: detroit,
             price: 5,
             id: 6,
+            number: 0,
             currency: '\u0024'
         },
         {
@@ -55,6 +61,7 @@ export const pizzasList = {
             picture: louis,
             price: 5,
             id: 7,
+            number: 0,
             currency: '\u0024'
         },
         {
@@ -62,6 +69,7 @@ export const pizzasList = {
             picture: greek,
             price: 5,
             id: 8,
+            number: 0,
             currency: '\u0024'
         }
     ]
