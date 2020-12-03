@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import {getNumberOfPizzas, addToCartAction, clearField} from '../../actions/actions'
+import Button from 'react-bootstrap/Button'
+import './addToCart.css'
+
 
 
 const AddToCart = (props) => {
@@ -34,12 +37,14 @@ const AddToCart = (props) => {
     }
 
     return (
-        <div>
+        <div className='buttons-wrapper'>
             <form onSubmit={getNumberOfItems}>
-                <span>{props.title.number}</span>
-                <button onClick={increase}>+</button>
-                <button onClick={decrease} disabled={disabled}>-</button>
-                <input type='submit' value='Add to cart...' disabled={disabled}></input>
+                <div className='dec-inc'>
+                    <Button variant="dark" onClick={increase} size="sm">+</Button >
+                    <span>{props.title.number}</span>
+                    <Button variant="dark" onClick={decrease} disabled={disabled} size="sm">-</Button >
+                </div>
+                <Button variant="dark" type='submit' value='Add to cart...' disabled={disabled} size="sm">Add to cart...</Button>
             </form>
         </div>
     )

@@ -11,16 +11,18 @@ const PizzaListItem = ({pizza}) => {
     return (
         <div className='piza-card'>
             <h1>{pizza.title}</h1>
-            <img src={pizza.picture} alt={pizza.title} />
-            <h4>{pizza.price}</h4>
-            <select className="CATEGORIES">
-                {currency.map(category => (
-                  <option value={category} key={category}>
-                    {category}
-                  </option>
-                ))}
-            </select>
-            <AddToCart title={cartItem}/>
+            <div className='info-wrapper'>
+              <img src={pizza.picture} alt={pizza.title} />
+              <h4>{pizza.price}</h4>
+              {/* <select className="CATEGORIES">
+                  {currency.map(category => (
+                    <option value={category} key={category}>
+                      {category}
+                    </option>
+                  ))}
+              </select> */}
+              <AddToCart title={cartItem}/>
+            </div>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import PizzaListItem from '../PizzaListItem/PizzaListItem'
 import './pizza-list.css'
+import {Card, CardDeck} from 'react-bootstrap'
 
 export class PizaaList extends Component {
 

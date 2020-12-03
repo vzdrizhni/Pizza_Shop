@@ -7,7 +7,7 @@ const OrderHistory = () => {
   const orders = JSON.parse(localStorage.getItem('orders'))
   console.log(orders);
   const {user} = useAuth0();
-  if (orders) {
+  if (user) {
     return (
       <Table striped bordered hover className="mt-3">
         <thead>

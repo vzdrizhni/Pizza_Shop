@@ -1,26 +1,47 @@
+import React, {useState} from 'react'
 import {Modal, Button, Form} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {useAuth0} from '@auth0/auth0-react'
 import {clearState} from '../../actions/actions'
 import {connect} from 'react-redux'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function MyVerticallyCenteredModal(props) {
-    const {user} = useAuth0();
+  const {user} = useAuth0();
+  const [errors, setErrors] = useState({name: ''});
 
-    let inputValue = '';
+  let inputValue = '';
+  // let errors = {};
+  console.log(errors);
 
-    if (localStorage.getItem('orders') === null) {
-      localStorage.setItem('orders', JSON.stringify([]));
+  if (localStorage.getItem('orders') === null) {
+    localStorage.setItem('orders', JSON.stringify([]));
+  }
+
+  const onChange = (e) => {
+    inputValue = e.target.value
+    console.log(inputValue);
+  }
+
+  const handleValidation = (input) => {
+    let formIsValid = true;
+
+    if (input === '') {
+      formIsValid = false;
+      setErrors({name: "Cannot be empty"});
     }
 
-    const onChange = (e) => {
-      inputValue = e.target.value
-      console.log(inputValue);
+    if (!input.match(/^[A-Za-z0-9 _]*[A-Za-z]+[A-Za-z0-9 _]*$/) && input !== '') {
+        console.log('gotcha', input);
+        formIsValid = false;
+        setErrors({name: "Should contain both letters and numbers"});
     }
+    return formIsValid;
+  }
 
-    const orderHandler = (e) => {
-      e.preventDefault();
-      if (user) {
+  const orderHandler = (e) => {
+    e.preventDefault();
+    if (user) {
+      if (handleValidation(inputValue)) {
         let person = {
           user: user.name,
           orders: '',
@@ -34,42 +55,49 @@ function MyVerticallyCenteredModal(props) {
         console.log('works');
         props.clearState();
         localStorage.removeItem('cartStorage');
+      } else {
+        console.log(errors.name);
       }
     }
+  }
 
-    return (
-      <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered>
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          <h4 style={{display: errors.name ? 'block' : 'none' }} className='danger'>{errors.name}</h4>
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
         <Form onSubmit={orderHandler}>
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Enter the adress..</Form.Label>
-              <Form.Control type="text" placeholder="Please Enter The Adress.." onChange={onChange} />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Enter the adress..</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Please Enter The Adress.."
+              name='adress'
+              onChange={onChange}/>
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
         </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    );
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
 }
 
 const mapDispatchToProps = dispatch => ({
-  clearState: value => dispatch(clearState(value)),
+  clearState: value => dispatch(clearState(value))
 });
 
-const mapStateToProps = state => ({ cart: state.cart });
+const mapStateToProps = state => ({cart: state.cart});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyVerticallyCenteredModal);
