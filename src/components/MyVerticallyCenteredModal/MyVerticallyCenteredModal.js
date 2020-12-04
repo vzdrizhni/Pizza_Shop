@@ -49,8 +49,6 @@ function MyVerticallyCenteredModal(props) {
       setErrors({lastName: "Lastname cannot be empty"});
     }
 
-    console.log(errors.lastName);
-
     return formIsValid;
   }
 
@@ -93,7 +91,6 @@ function MyVerticallyCenteredModal(props) {
         setErrors({name: "Order Successfully Accepted!"})
       }
     } else {
-      console.log('gotcha');
       if (handleValidation(inputValue) && handleNamesValidation(nameValue) && handleLastNamesValidation(lastNameValue)) {
         setErrors({name: "Order Successfully Accepted!"})
         setInputValue('');
