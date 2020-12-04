@@ -13,7 +13,7 @@ const addToCartReducer = (state = [], action) => {
 
   switch (action.type) {
     case 'ADDTOCART':
-      if (state.some((pizza, index) => pizza.title === action.value.title)) {
+      if (state.some((pizza) => pizza.title === action.value.title)) {
         return produce(state, draft => {
           draft[index].number += action.value.number
         });
