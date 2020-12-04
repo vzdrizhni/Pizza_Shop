@@ -3,7 +3,6 @@ import {Modal, Button, Form} from 'react-bootstrap'
 import {useAuth0} from '@auth0/auth0-react'
 import {clearthestate} from '../../actions/actions'
 import {connect} from 'react-redux'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function MyVerticallyCenteredModal(props) {
   const {user} = useAuth0();

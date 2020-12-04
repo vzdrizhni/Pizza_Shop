@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {Col, Form} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {changeCurrency} from '../../actions/actions'
 import {connect} from 'react-redux'
 

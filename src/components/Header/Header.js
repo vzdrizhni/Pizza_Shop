@@ -15,7 +15,11 @@ const Header = (props) => {
     const [itemLength, setItemLength] = useState(0);
 
     useEffect(() => {
-        setItemLength(JSON.parse(localStorage.getItem('cartStorage')).length)
+        if(!JSON.parse(localStorage.getItem('cartStorage'))) {
+            setItemLength(0)
+        } else {
+            setItemLength(JSON.parse(localStorage.getItem('cartStorage')).length)
+        }
     }, [[...props.cart]])
 
     return (

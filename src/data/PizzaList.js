@@ -1,16 +1,7 @@
-import napoli from '../assets/pictures/neapolitan-pizza.jpg'
-import ny from '../assets/pictures/new-york-pizza.jpg'
-import deepdish from '../assets/pictures/deep-dish-pizza.jpg'
-import sic from '../assets/pictures/sicilian-pizza.jpg'
-import california from '../assets/pictures/californian-pizza.jpg'
-import detroit from '../assets/pictures/detroit-style-pizza.jpg'
-import louis from '../assets/pictures/st-louis-pizza.jpg'
-import greek from '../assets/pictures/greek-pizza.jpg'
-
 export const pizzasList = {
     pizzas: [{
             title: 'Neapolitan Pizza',
-            picture: napoli,
+            picture: 'https://i2.wp.com/smokedbbqsource.com/wp-content/uploads/2020/04/neapolitan-pizza.jpg',
             price: 5,
             id: 1,
             number: 0,
@@ -18,7 +9,7 @@ export const pizzasList = {
         },
         {
             title: 'New York-Style Pizza',
-            picture: ny,
+            picture: 'https://i2.wp.com/smokedbbqsource.com/wp-content/uploads/2020/04/new-york-pizza.jpg',
             price: 5,
             id: 2,
             number: 0,
@@ -26,7 +17,7 @@ export const pizzasList = {
         },
         {
             title: 'Chicago/Deep-Dish Pizza',
-            picture: deepdish,
+            picture: 'https://i2.wp.com/smokedbbqsource.com/wp-content/uploads/2020/04/deep-dish-pizza.jpg',
             price: 5,
             id: 3,
             number: 0,
@@ -34,7 +25,7 @@ export const pizzasList = {
         },
         {
             title: 'Sicilian Pizza',
-            picture: sic,
+            picture: 'https://i2.wp.com/smokedbbqsource.com/wp-content/uploads/2020/04/sicilian-pizza.jpg',
             price: 5,
             id: 4,
             number: 0,
@@ -42,7 +33,7 @@ export const pizzasList = {
         },
         {
             title: 'Californian Pizza',
-            picture: california,
+            picture: 'https://i2.wp.com/smokedbbqsource.com/wp-content/uploads/2020/04/californian-pizza.jpg',
             price: 5,
             id: 5,
             number: 0,
@@ -50,7 +41,7 @@ export const pizzasList = {
         },
         {
             title: 'Detroit Pizza',
-            picture: detroit,
+            picture: 'https://i2.wp.com/smokedbbqsource.com/wp-content/uploads/2020/04/detroit-style-pizza.jpg',
             price: 5,
             id: 6,
             number: 0,
@@ -58,7 +49,7 @@ export const pizzasList = {
         },
         {
             title: 'St. Louis Pizza',
-            picture: louis,
+            picture: 'https://i2.wp.com/smokedbbqsource.com/wp-content/uploads/2020/04/st-louis-pizza.jpg',
             price: 5,
             id: 7,
             number: 0,
@@ -66,7 +57,7 @@ export const pizzasList = {
         },
         {
             title: 'Greek Pizza',
-            picture: greek,
+            picture: 'https://i2.wp.com/smokedbbqsource.com/wp-content/uploads/2020/04/greek-pizza.jpg',
             price: 5,
             id: 8,
             number: 0,
