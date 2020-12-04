@@ -12,7 +12,7 @@ function MyVerticallyCenteredModal(props) {
   const [nameValue, setNameValue] = useState('');
   const [lastNameValue, setLastNameValue] = useState('');
 
-  const {clearthestate, ...rest} = props;
+  const {clearthestate} = props;
 
   if (localStorage.getItem('orders') === null) {
     localStorage.setItem('orders', JSON.stringify([]));
@@ -85,26 +85,33 @@ function MyVerticallyCenteredModal(props) {
         let raw = JSON.parse(localStorage.getItem('orders'))
         raw.push(person)
         localStorage.setItem('orders', JSON.stringify(raw));
-        console.log('works');
         clearthestate();
         localStorage.removeItem('cartStorage');
         setInputValue('');
         setNameValue('');
         setLastNameValue('');
         setErrors({name: "Order Successfully Accepted!"})
-      } else {
-        console.log(errors.name);
+      }
+    } else {
+      console.log('gotcha');
+      if (handleValidation(inputValue) && handleNamesValidation(nameValue) && handleLastNamesValidation(lastNameValue)) {
+        setErrors({name: "Order Successfully Accepted!"})
+        setInputValue('');
+        setNameValue('');
+        setLastNameValue('');
+        clearthestate();
+        localStorage.removeItem('cartStorage');
       }
     }
   }
 
   return (
     <Modal
-      {...props}
+      show={props.show}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered>
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
           <h4 style={{display: errors.name ? 'block' : 'none' }} className='danger'>{errors.name}</h4>
         </Modal.Title>

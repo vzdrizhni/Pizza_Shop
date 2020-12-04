@@ -13,7 +13,9 @@ const Cart = ({cart, addToCartAction, changeCurrency, priceCarrier}) => {
 
     let currency = '\u0024'
     cart.length > 0 ? currency = cart[0].currency : currency = '\u0024';
+
     let disabled = '';
+
     let numberOfPizzas = cart.reduce((acc, item) => {
       return acc + item.number
     }, 0)
@@ -27,13 +29,13 @@ const Cart = ({cart, addToCartAction, changeCurrency, priceCarrier}) => {
     const total = cart.reduce((item, next) => {
         return item + next.price*next.number;
     }, 0)
+
     const shipping = 15;
     const tax = total*0.05;
     const finalPrice = total + shipping + tax;
 
     const carryThePrice = () => {
       priceCarrier(finalPrice);
-      console.log('finalPrice' + finalPrice);
     }
 
     if (localStorage.getItem('cartStorage') === null) {
@@ -45,7 +47,6 @@ const Cart = ({cart, addToCartAction, changeCurrency, priceCarrier}) => {
         addToCartAction(element)
       });
     } else if ((JSON.parse(localStorage.getItem('cartStorage')).length - cart.length) === 1 && cart.length === 0) {
-      console.log(cart.length);
       addToCartAction((JSON.parse(localStorage.getItem('cartStorage'))[0]));
     } else if ((JSON.parse(localStorage.getItem('cartStorage')).length - cart.length) == 1 && cart.length !== 0) {
       localStorage.setItem('cartStorage', JSON.stringify(cart));

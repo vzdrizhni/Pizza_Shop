@@ -1,7 +1,8 @@
 .piza-card {
     position: relative;
-    border: 3px solid orange;
+    /* border: 3px solid orange; */
     border-radius: 2%;
+    box-shadow: 5px 10px 8px #3b3939;
 }
 
 .piza-card h1 {

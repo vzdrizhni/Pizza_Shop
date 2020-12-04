@@ -12,6 +12,11 @@ export class PizaaList extends Component {
                 <div>Loading</div>
             )
         } else {
+            if (localStorage.getItem('cartStorage') === null) {
+                localStorage.setItem('cartStorage', JSON.stringify(this.props.cart));
+              } else if (this.props.cart.length > JSON.parse(localStorage.getItem('cartStorage')).length) {
+                localStorage.setItem('cartStorage', JSON.stringify(this.props.cart))
+              }
             return (
                 <div className="pizza-list">
                     {pizzas.map(pizza => {
@@ -23,6 +28,6 @@ export class PizaaList extends Component {
     }
 }
 
-const mapStateToProps = state => ({ pizzas: state.pizzas});
+const mapStateToProps = state => ({ pizzas: state.pizzas, cart: state.cart});
 
 export default connect(mapStateToProps)(PizaaList);

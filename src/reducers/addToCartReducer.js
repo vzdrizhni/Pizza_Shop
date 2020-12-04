@@ -36,7 +36,7 @@ const addToCartReducer = (state = [], action) => {
         draft.splice(index, 1)
       })
     case 'CLEARSTATE':
-      return produce(state, draft => [])
+      return produce(state, draft => draft = [])
     case 'CHANGECURRENCY':
       if (action.value === '2') {
         return produce(state, draft => {

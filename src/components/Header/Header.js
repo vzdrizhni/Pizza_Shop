@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import banner from '../../assets/pictures/PizzaBanner.png'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,6 +12,12 @@ import CurrencyOption from '../CurrencyOption/CurrencyOption'
 
 const Header = (props) => {
     const {loginWithRedirect, user, logout} = useAuth0();
+    const [itemLength, setItemLength] = useState(0);
+
+    useEffect(() => {
+        setItemLength(JSON.parse(localStorage.getItem('cartStorage')).length)
+    }, [[...props.cart]])
+
     return (
         <div>
             <header>
@@ -31,7 +37,7 @@ const Header = (props) => {
                     <Link to='/cart' className='icon-link'>
                         <div className='cart-wrapper'>
                             <FontAwesomeIcon icon={faShoppingCart} id='icon' />
-                            <span style={{backgroundColor: props.cart.length > 0 ? '#c71105' : '#bbb' }}>{props.cart.length}</span>
+                            <span style={{backgroundColor: itemLength > 0 ? '#c71105' : '#bbb' }}>{itemLength}</span>
                         </div>
                     </Link>
                 </div>

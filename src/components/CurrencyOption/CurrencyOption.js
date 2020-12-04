@@ -14,7 +14,6 @@ const CurrencyOption = ({changeCurrency}) => {
     setCurrency(value);
     changeCurrency(value);
   }
-  console.log(currency);
 
   return (
     <div>
