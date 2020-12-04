@@ -139,33 +139,35 @@
 		transform: rotate(-360deg);
 	}
 
-	a.red {
+	div.red {
 		background-color: rgba(239,57,50,1);
 		color: rgba(133,32,28,1);
 		border-color: rgba(133,32,28,.2);
+		cursor: pointer;
 	}
 
-	a.red:hover {
+	div.red:hover {
 		color: rgba(239,57,50,1);
 	}
 
-	a.green {
+	div.green {
 		background-color: rgba(1,151,171,1);
 		color: rgba(0,63,71,1);
 		border-color: rgba(0,63,71,.2);
+		cursor: pointer;
 	}
 
-	a.green:hover {
+	div.green:hover {
 		color: rgba(1,151,171,1);
 	}
 
-	a.yellow {
+	div.yellow {
 		background-color: rgba(252,227,1,1);
 		color: rgba(153,38,0,1);
 		border-color: rgba(153,38,0,.2);
 	}
 
-	a.yellow:hover {
+	div.yellow:hover {
 		color: rgba(252,227,1,1);
 	}
 

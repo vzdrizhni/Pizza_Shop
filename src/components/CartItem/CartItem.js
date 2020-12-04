@@ -32,7 +32,7 @@ const CartItem = ({cart, changeNumber, increaseNumber, remove, cartTracker}) => 
     return (
         <div className='product'>
                 <div className="product-image">
-                    <img src={cart.picture} />
+                    <img src={cart.picture} alt={cart.title}/>
                 </div>
                 <div className="product-details">
                     <div className="product-title">{cart.title}</div>

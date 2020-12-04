@@ -44,11 +44,11 @@ const Cart = ({cart, addToCartAction, changeCurrency, priceCarrier}) => {
       localStorage.setItem('cartStorage', JSON.stringify(cart))
     } else if ((JSON.parse(localStorage.getItem('cartStorage')).length - cart.length) > 1){
       JSON.parse(localStorage.getItem('cartStorage')).map(element => {
-        addToCartAction(element)
+        return addToCartAction(element)
       });
     } else if ((JSON.parse(localStorage.getItem('cartStorage')).length - cart.length) === 1 && cart.length === 0) {
       addToCartAction((JSON.parse(localStorage.getItem('cartStorage'))[0]));
-    } else if ((JSON.parse(localStorage.getItem('cartStorage')).length - cart.length) == 1 && cart.length !== 0) {
+    } else if ((JSON.parse(localStorage.getItem('cartStorage')).length - cart.length) === 1 && cart.length !== 0) {
       localStorage.setItem('cartStorage', JSON.stringify(cart));
     } else if (cart.map(item => JSON.parse(localStorage.getItem('cartStorage')).some(element => item.number !== element.number))) {
       localStorage.setItem('cartStorage', JSON.stringify(cart));

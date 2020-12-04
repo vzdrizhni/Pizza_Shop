@@ -23,8 +23,8 @@ const pizzasReducer = (state = pizzasList.pizzas, action) => {
       } else {
         return produce(state, draft => {
           draft.map(item => {
-            return item.currency = '\u0024',
-            item.price *= 1.25
+            return (item.currency = '\u0024',
+            item.price *= 1.25)
           })
         })
       }

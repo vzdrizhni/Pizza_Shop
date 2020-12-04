@@ -20,7 +20,7 @@ const Header = (props) => {
         } else {
             setItemLength(JSON.parse(localStorage.getItem('cartStorage')).length)
         }
-    }, [[...props.cart]])
+    }, [props.cart])
 
     return (
         <div>
@@ -32,9 +32,9 @@ const Header = (props) => {
                     <div>
                         <ul>
                             {user ? (
-                                <li onClick={() => logout()}><a href='#' className='round red'>LogOut<span className="round">But only if you really, really want to. </span></a></li>
+                                <li onClick={() => logout()}><div className='round red'>LogOut<span className="round">But only if you really, really want to. </span></div></li>
                              ) : (
-                                <li onClick={() => loginWithRedirect()}><a href='#' className='round green'>LogIn<span className="round">Create an account or Log in if you have an account.</span></a></li>
+                                <li onClick={() => loginWithRedirect()}><div className='round green'>LogIn<span className="round">Create an account or Log in if you have an account.</span></div></li>
                             )}
                         </ul>
                     </div>

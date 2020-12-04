@@ -1,16 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {Col, Form} from 'react-bootstrap'
 import {changeCurrency} from '../../actions/actions'
 import {connect} from 'react-redux'
 
 const CurrencyOption = ({changeCurrency}) => {
 
-  const [currency,
-    setCurrency] = useState('');
-
   const changeCurrentCurrency = (e) => {
-    let {value} = e.target
-    setCurrency(value);
+    let {value} = e.target;
     changeCurrency(value);
   }
 
