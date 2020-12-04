@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/vzdrizhni/Pizza_Shop/static/css/main.e86117f6.chunk.css",
+    "main.js": "/vzdrizhni/Pizza_Shop/static/js/main.f4f644b1.chunk.js",
+    "main.js.map": "/vzdrizhni/Pizza_Shop/static/js/main.f4f644b1.chunk.js.map",
+    "runtime-main.js": "/vzdrizhni/Pizza_Shop/static/js/runtime-main.40a3cdf9.js",
+    "runtime-main.js.map": "/vzdrizhni/Pizza_Shop/static/js/runtime-main.40a3cdf9.js.map",
+    "static/css/2.20aa2d7b.chunk.css": "/vzdrizhni/Pizza_Shop/static/css/2.20aa2d7b.chunk.css",
+    "static/js/2.ccd592e1.chunk.js": "/vzdrizhni/Pizza_Shop/static/js/2.ccd592e1.chunk.js",
+    "static/js/2.ccd592e1.chunk.js.map": "/vzdrizhni/Pizza_Shop/static/js/2.ccd592e1.chunk.js.map",
+    "index.html": "/vzdrizhni/Pizza_Shop/index.html",
+    "static/css/2.20aa2d7b.chunk.css.map": "/vzdrizhni/Pizza_Shop/static/css/2.20aa2d7b.chunk.css.map",
+    "static/css/main.e86117f6.chunk.css.map": "/vzdrizhni/Pizza_Shop/static/css/main.e86117f6.chunk.css.map",
+    "static/js/2.ccd592e1.chunk.js.LICENSE.txt": "/vzdrizhni/Pizza_Shop/static/js/2.ccd592e1.chunk.js.LICENSE.txt",
+    "static/media/PizzaBanner.865e4e1c.png": "/vzdrizhni/Pizza_Shop/static/media/PizzaBanner.865e4e1c.png",
+    "static/media/californian-pizza.59f0a064.jpg": "/vzdrizhni/Pizza_Shop/static/media/californian-pizza.59f0a064.jpg",
+    "static/media/deep-dish-pizza.77245916.jpg": "/vzdrizhni/Pizza_Shop/static/media/deep-dish-pizza.77245916.jpg",
+    "static/media/detroit-style-pizza.a19bcc96.jpg": "/vzdrizhni/Pizza_Shop/static/media/detroit-style-pizza.a19bcc96.jpg",
+    "static/media/greek-pizza.d0667928.jpg": "/vzdrizhni/Pizza_Shop/static/media/greek-pizza.d0667928.jpg",
+    "static/media/neapolitan-pizza.61e03719.jpg": "/vzdrizhni/Pizza_Shop/static/media/neapolitan-pizza.61e03719.jpg",
+    "static/media/new-york-pizza.79c17662.jpg": "/vzdrizhni/Pizza_Shop/static/media/new-york-pizza.79c17662.jpg",
+    "static/media/sicilian-pizza.b8500754.jpg": "/vzdrizhni/Pizza_Shop/static/media/sicilian-pizza.b8500754.jpg",
+    "static/media/st-louis-pizza.663cd531.jpg": "/vzdrizhni/Pizza_Shop/static/media/st-louis-pizza.663cd531.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.40a3cdf9.js",
+    "static/css/2.20aa2d7b.chunk.css",
+    "static/js/2.ccd592e1.chunk.js",
+    "static/css/main.e86117f6.chunk.css",
+    "static/js/main.f4f644b1.chunk.js"
+  ]
+}
