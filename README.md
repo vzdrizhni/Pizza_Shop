@@ -23,7 +23,7 @@
 <br />
 <p align="center">  
   <a href="https://github.com/vzdrizhni/Pizza_Shop">
-    <img src="src/assets/pictures/nick.png" alt="Logo" width="80" height="100">
+    <img src="src/assets/pictures/nick.png" alt="Logo" width="80" height="120">
   </a>
 
   <h3 align="center">ReactJs --> [Pizza_Shop App]</h3>
