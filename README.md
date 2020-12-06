@@ -21,14 +21,9 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
-<<<<<<< HEAD
-  <a href="https://github.com/vzdrizhni//Pizza_Shop">
-    <img src="src/assets/nick.png" alt="Logo" width="80" height="80">
-=======
+<p align="center">  
   <a href="https://github.com/vzdrizhni/Pizza-Shop">
     <img src="src/assets/pictures/nick.png" alt="Logo" width="80" height="80">
->>>>>>> 71f212ffd05c9edc8bd66f199f676c6722b983b8
   </a>
 
   <h3 align="center">ReactJs --> [Pizza_Shop App]</h3>
@@ -51,7 +46,6 @@
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
   * [Usage](#usage)
-  * [Automated Test](#automated-test)
 * [Contributors](#contributors)
 * [Acknowledgements](#acknowledgements)
 * [License](#license)
@@ -103,11 +97,6 @@ To have this app on your pc, you need to:
     - It correctly bundles React in production mode and optimizes the build for the best performance.
     - The build is minified and the filenames include the hashes.
     - Your app is ready to be deployed!
-
-## Automated Test
- - `$ yarn test`
-    - Launches the test runner in the interactive watch mode.<br />
-    - See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## Live Demo & Deployment
 The project has been deployed with Netlify.
