@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.banner a img {
+	width: 100%;
+}
+
 .icon-link {
     position: absolute;
     right: 25px;

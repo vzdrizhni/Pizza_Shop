@@ -1,70 +1,148 @@
-# Getting Started with Create React App
+<!--
+*** Thanks for checking out this README Template. If you have a suggestion that would
+*** make this better, please fork the repo and create a pull request or simply open
+*** an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/vzdrizhni//Pizza-Shop">
+    <img src="src/assets/nick.png" alt="Logo" width="80" height="80">
+  </a>
 
-### `yarn start`
+  <h3 align="center">ReactJs --> [Pizza-Shop App]</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <p align="center">
+    This is a Pizza-Shop app built with React.
+    <br />
+    <a href="https://github.com/vzdrizhni//Pizza-Shop"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/vzdrizhni//Pizza-Shop/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/vzdrizhni//Pizza-Shop/issues">Request Feature</a>
+  </p>
+</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-### `yarn test`
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+  * [Usage](#usage)
+  * [Automated Test](#automated-test)
+* [Contributors](#contributors)
+* [Acknowledgements](#acknowledgements)
+* [License](#license)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- ABOUT THE PROJECT -->
+## About The Project
+The project is about real world pizza online shop. Though it's small it has all the functioanality average online shops have. Customer can add multiple pizzas to the cart, choose currency and make an order. If the user is signed in they can see their purchase history.
 
-### `yarn build`
+![screenshot-1](src/assets/pictures/Screenshot1.PNG)
+![screenshot-2](src/assets/pictures/Screenshot2.PNG)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Built With
+This project was built using these technologies.
+* HTML/CSS
+* ReactJs
+* Redux
+* JavaScript
+* ESLint
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- INSTALLATION -->
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To have this app on your pc, you need to:
+* [download](https://github.com/vzdrizhni//Pizza-Shop/archive/develop.zip) or clone this repo:
+  - Clone with SSH:
+  ```
+    git@github.com:vzdrizhni//Pizza-Shop.git
+  ```
+  - Clone with HTTPS
+  ```
+    https://github.com/vzdrizhni//Pizza-Shop.git
+  ```
 
-### `yarn eject`
+* In the project directory, you can run:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  - `$ yarn install` - installs all the dependencies required by the project
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - `$ yarn start` - runs the app in the development mode:
+    - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    - The page will reload if you make edits.
+    - You will also see any lint errors in the console.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  - `$ yarn test`
+    - Launches the test runner in the interactive watch mode.
+    - See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  - `$ yarn build`
+    - Builds the app for production to the `build` folder.
+    - It correctly bundles React in production mode and optimizes the build for the best performance.
+    - The build is minified and the filenames include the hashes.
+    - Your app is ready to be deployed!
 
-## Learn More
+## Automated Test
+ - `$ yarn test`
+    - Launches the test runner in the interactive watch mode.<br />
+    - See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Live Demo & Deployment
+The project has been deployed with Netlify.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Live Demo Link](https://roman-pizza.netlify.app/) :point_left:
 
-### Code Splitting
+<!-- CONTACT -->
+## Contributors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+👤 **Roman Nikolaev**
 
-### Analyzing the Bundle Size
+- LinkedIn: [Roman Nikolaev]https://www.linkedin.com/in/romannikolaev/)
+- GitHub: [vzdrizhni](https://github.com/vzdrizhni)
+- E-mail: vzdrizhni@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## :handshake: Contributing
 
-### Making a Progressive Web App
+Contributions, issues and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Feel free to check the [issues page](https://github.com/vzdrizhni//Pizza-Shop/issues).
 
-### Advanced Configuration
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Give a :star: if you like this project!
 
-### Deployment
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [React Documentation](https://reactjs.org/docs/getting-started.html)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/vzdrizhni/Pizza-Shop.svg?style=flat-square
+[contributors-url]: https://github.com/vzdrizhni/Pizza-Shop/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/vzdrizhni/Pizza-Shop.svg?style=flat-square
+[forks-url]: https://github.com/vzdrizhni/Pizza-Shop/network/members
+[stars-shield]: https://img.shields.io/github/stars/vzdrizhni/Pizza-Shop.svg?style=flat-square
+[stars-url]: https://github.com/vzdrizhni/Pizza-Shop/stargazers
+[issues-shield]: https://img.shields.io/github/issues/vzdrizhni/Pizza-Shop.svg?style=flat-square
+[issues-url]: https://github.com/vzdrizhni/Pizza-Shop/issues
 
-### `yarn build` fails to minify
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
