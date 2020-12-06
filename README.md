@@ -22,21 +22,21 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/vzdrizhni//Pizza-Shop">
+  <a href="https://github.com/vzdrizhni//Pizza_Shop">
     <img src="src/assets/nick.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">ReactJs --> [Pizza-Shop App]</h3>
+  <h3 align="center">ReactJs --> [Pizza_Shop App]</h3>
 
   <p align="center">
     This is a Pizza-Shop app built with React.
     <br />
-    <a href="https://github.com/vzdrizhni//Pizza-Shop"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/vzdrizhni//Pizza_Shop"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/vzdrizhni//Pizza-Shop/issues">Report Bug</a>
+    <a href="https://github.com/vzdrizhni//Pizza_Shop/issues">Report Bug</a>
     ·
-    <a href="https://github.com/vzdrizhni//Pizza-Shop/issues">Request Feature</a>
+    <a href="https://github.com/vzdrizhni//Pizza_Shop/issues">Request Feature</a>
   </p>
 </p>
 
@@ -70,14 +70,14 @@ This project was built using these technologies.
 ## Usage
 
 To have this app on your pc, you need to:
-* [download](https://github.com/vzdrizhni//Pizza-Shop/archive/develop.zip) or clone this repo:
+* [download](https://github.com/vzdrizhni//Pizza_Shop/archive/develop.zip) or clone this repo:
   - Clone with SSH:
   ```
-    git@github.com:vzdrizhni//Pizza-Shop.git
+    git@github.com:vzdrizhni//Pizza_Shop.git
   ```
   - Clone with HTTPS
   ```
-    https://github.com/vzdrizhni//Pizza-Shop.git
+    https://github.com/vzdrizhni//Pizza_Shop.git
   ```
 
 * In the project directory, you can run:
@@ -122,7 +122,7 @@ The project has been deployed with Netlify.
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/vzdrizhni//Pizza-Shop/issues).
+Feel free to check the [issues page](https://github.com/vzdrizhni//Pizza_Shop/issues).
 
 ## Show your support
 
@@ -134,14 +134,14 @@ Give a :star: if you like this project!
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/vzdrizhni/Pizza-Shop.svg?style=flat-square
-[contributors-url]: https://github.com/vzdrizhni/Pizza-Shop/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/vzdrizhni/Pizza-Shop.svg?style=flat-square
-[forks-url]: https://github.com/vzdrizhni/Pizza-Shop/network/members
-[stars-shield]: https://img.shields.io/github/stars/vzdrizhni/Pizza-Shop.svg?style=flat-square
-[stars-url]: https://github.com/vzdrizhni/Pizza-Shop/stargazers
-[issues-shield]: https://img.shields.io/github/issues/vzdrizhni/Pizza-Shop.svg?style=flat-square
-[issues-url]: https://github.com/vzdrizhni/Pizza-Shop/issues
+[contributors-shield]: https://img.shields.io/github/contributors/vzdrizhni/Pizza_Shop.svg?style=flat-square
+[contributors-url]: https://github.com/vzdrizhni/Pizza_Shop/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/vzdrizhni/Pizza_Shop.svg?style=flat-square
+[forks-url]: https://github.com/vzdrizhni/Pizza_Shop/network/members
+[stars-shield]: https://img.shields.io/github/stars/vzdrizhni/Pizza_Shop.svg?style=flat-square
+[stars-url]: https://github.com/vzdrizhni/Pizza_Shop/stargazers
+[issues-shield]: https://img.shields.io/github/issues/vzdrizhni/Pizza_Shop.svg?style=flat-square
+[issues-url]: https://github.com/vzdrizhni/Pizza_Shop/issues
 
 ## 📝 License
 
