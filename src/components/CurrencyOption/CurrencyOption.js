@@ -25,7 +25,6 @@ const CurrencyOption = ({changeCurrency}) => {
               custom
               defaultValue='1'
               onChange={changeCurrentCurrency}>
-              <option value="0">Choose the currency</option>
               <option value="1">USD</option>
               <option value="2">EUR</option>
             </Form.Control>
