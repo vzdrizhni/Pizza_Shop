@@ -22,7 +22,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/vzdrizhni//Pizza-Shop">
+  <a href="https://github.com/vzdrizhni/Pizza-Shop">
     <img src="src/assets/pictures/nick.png" alt="Logo" width="80" height="80">
   </a>
 
