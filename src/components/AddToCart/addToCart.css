@@ -1,0 +1,21 @@
+form {
+    display: flex;
+    background-color: #eeeeee;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dec-inc {
+    margin-top: 15px;
+}
+
+.dec-inc span {
+    margin: 0 3px;
+}
+
+.add-to {
+    width: 100%;
+    margin-top: 15px !important;
+    border-radius: 3px !important;
+}
