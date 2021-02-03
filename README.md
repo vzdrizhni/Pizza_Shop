@@ -52,7 +52,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-The project is about real world pizza online shop. Though it's small it has all the functioanality average online shops have. Customer can add multiple pizzas to the cart, choose currency and make an order. If the user is signed in they can see their purchase history.
+The project is about real-world pizza online shop. Though it's small it has all the functionality average online shops have. Customers can add multiple pizzas to the cart, choose the currency and make an order. If the user is signed in they can see their purchase history.
 
 ![screenshot-1](src/assets/pictures/Screenshot1.PNG)
 ![screenshot-2](src/assets/pictures/Screenshot2.PNG)
